@@ -1,12 +1,17 @@
 import java.util.ArrayList;
 
 public class Photographer {
+  private String name;
   private ArrayList<Camera> cameraCollection;
 
-  public Photographer(){
+  public Photographer(String name){
+    this.name = name;
     this.cameraCollection = new ArrayList<Camera>();
   }
 
+  public String getName() {
+    return this.name;
+  }
 
   public int cameraCount() {
     return this.cameraCollection.size();
