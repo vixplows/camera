@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class Photographer {
   private String name;
-  private ArrayList<Camera> cameraCollection;
+  private ArrayList<Printable> cameraCollection;
 
   public Photographer(String name){
     this.name = name;
-    this.cameraCollection = new ArrayList<Camera>();
+    this.cameraCollection = new ArrayList<Printable>();
   }
 
   public String getName() {
@@ -17,7 +17,7 @@ public class Photographer {
     return this.cameraCollection.size();
   }
 
-  public void addCamera(Camera camera) {
+  public void addCamera(Printable camera) {
     this.cameraCollection.add(camera);
   }
 
@@ -25,6 +25,15 @@ public class Photographer {
     if (cameraCount() > 0){
       this.cameraCollection.remove(0);
     }
+  }
+
+  public void allCameraDetails() {
+    String allDetails = "";
+    for (Printable camera : this.cameraCollection) {
+      allDetails += camera.printDetails();
+    }
+      return allDetails;
+// printDetails method to get the camera details
   }
 
 }
